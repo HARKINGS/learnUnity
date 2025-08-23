@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6010106283529407411}
   - component: {fileID: 4454504723122002443}
   - component: {fileID: 5005796726179426838}
-  - component: {fileID: 8142372116547794074}
+  - component: {fileID: 3699306957800849414}
   m_Layer: 0
   m_Name: Strawberry
   m_TagString: Untagged
@@ -135,7 +135,7 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 4, y: 4}
   m_EdgeRadius: 0
---- !u!114 &8142372116547794074
+--- !u!114 &3699306957800849414
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -147,4 +147,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c73f225166f7c542a2ccd2e8d18661b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthAmount: 2

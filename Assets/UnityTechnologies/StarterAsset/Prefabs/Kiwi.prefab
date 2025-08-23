@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8021411604312995407}
   - component: {fileID: 7685816171635592456}
-  - component: {fileID: 576496036152305023}
   - component: {fileID: -6908073079929433471}
+  - component: {fileID: 4573718378928056158}
   m_Layer: 0
   m_Name: Kiwi
   m_TagString: Untagged
@@ -89,18 +89,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &576496036152305023
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7893660760600938284}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0c73f225166f7c542a2ccd2e8d18661b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!61 &-6908073079929433471
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -147,3 +135,15 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 4, y: 4}
   m_EdgeRadius: 0
+--- !u!114 &4573718378928056158
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7893660760600938284}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c73f225166f7c542a2ccd2e8d18661b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
