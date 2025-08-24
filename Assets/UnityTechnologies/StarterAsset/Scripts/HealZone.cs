@@ -1,10 +1,10 @@
 using UnityEngine;
 
-public class DmgZone : MonoBehaviour
+public class HealZone : MonoBehaviour
 {
     void OnTriggerStay2D(Collider2D other)
     {
         PlayerController controller = other.GetComponent<PlayerController>();
-        if (controller != null) controller.ChangeHealth(-1);
+        if (controller != null) controller.ChangeHealth(1);
     }
 }
