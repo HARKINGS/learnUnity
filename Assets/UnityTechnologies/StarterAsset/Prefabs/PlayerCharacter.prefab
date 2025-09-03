@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7912126610495329675}
   - component: {fileID: 5153124523258752063}
   - component: {fileID: 3513593106806588315}
+  - component: {fileID: -6680368263273757041}
   m_Layer: 8
   m_Name: PlayerCharacter
   m_TagString: Untagged
@@ -55,6 +56,8 @@ SpriteRenderer:
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -76,6 +79,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
@@ -102,6 +106,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cdbfaf92b63c7b41a1749b69e60db16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  projectilePrefab: {fileID: 8487871712308984995, guid: ccb82c7bf30886e4a93fbea2421555c9,
+    type: 3}
   MoveAction:
     m_Name: Move
     m_Type: 0
@@ -153,6 +159,7 @@ MonoBehaviour:
     m_Flags: 0
   speed: 3
   maxHealth: 5
+  timeInvincible: 2
 --- !u!50 &5153124523258752063
 Rigidbody2D:
   serializedVersion: 5
@@ -226,3 +233,25 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.22, y: 0.8796528}
   m_EdgeRadius: 0
+--- !u!95 &-6680368263273757041
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2123117494438521863}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1b3a4770a7e776a4eb919d64c9e4141f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
