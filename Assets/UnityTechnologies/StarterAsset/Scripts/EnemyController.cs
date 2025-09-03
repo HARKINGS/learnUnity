@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
+    bool broken = true;
     Animator animator;
     public float changeTime = 3.0f;
     private float timer;
@@ -13,7 +14,7 @@ public class EnemyController : MonoBehaviour
     public float speed;
     Rigidbody2D rigidbody2d;
 
-    
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -36,7 +37,7 @@ public class EnemyController : MonoBehaviour
 
     void FixedUpdate()
     {
-        
+        if (!broken) return;
 
         Vector2 position = rigidbody2d.position;
 
@@ -64,5 +65,12 @@ public class EnemyController : MonoBehaviour
         {
             player.ChangeHealth(-1);
         }
+    }
+
+    public void Fix()
+    {
+        animator.SetTrigger("Fixed");
+        broken = false;
+        rigidbody2d.simulated = false;
     }
 }
