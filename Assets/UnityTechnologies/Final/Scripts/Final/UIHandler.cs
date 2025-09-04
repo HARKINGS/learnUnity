@@ -25,7 +25,7 @@ public class UIHandler : MonoBehaviour
         m_Healthbar = uiDocument.rootVisualElement.Q<VisualElement>("Healthbar");
 
         m_DialogWindow = uiDocument.rootVisualElement.Q<VisualElement>("DialogWindow");
-        m_DialogWindow.style.display = DisplayStyle.None;
+        m_DialogWindow.style.display = DisplayStyle.Flex;
         m_TimerDisplay = -1.0f;
 
         SetHealthValue(1.0f);

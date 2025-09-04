@@ -5,17 +5,17 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
+    public InputAction talkAction;
     // Variables related to player character movement
     public InputAction MoveAction;
     Rigidbody2D rigidbody2d;
     Vector2 move;
     public float speed = 3.0f;
 
-
     // Variables related to the health system
     public int maxHealth = 5;
     int currentHealth;
-    public int health { get { return currentHealth; }}
+    public int health { get { return currentHealth; } }
 
 
     // Variables related to temporary invincibility
@@ -26,7 +26,7 @@ public class PlayerController : MonoBehaviour
 
     // Variables related to animation
     Animator animator;
-    Vector2 moveDirection = new Vector2(1,0);
+    Vector2 moveDirection = new Vector2(1, 0);
 
 
     // Variables related to projectiles
@@ -37,6 +37,7 @@ public class PlayerController : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         MoveAction.Enable();
+        talkAction.Enable();
         rigidbody2d = GetComponent<Rigidbody2D>();
         currentHealth = maxHealth;
     }
@@ -63,10 +64,8 @@ public class PlayerController : MonoBehaviour
                 isInvincible = false;
         }
 
-        if (Input.GetKeyDown(KeyCode.C))
-        {
-            Launch();
-        }
+        if (Input.GetKeyDown(KeyCode.C)) Launch();
+        if (Input.GetKeyDown(KeyCode.X)) FindFriend();
     }
 
 
@@ -96,5 +95,23 @@ public class PlayerController : MonoBehaviour
         StartProjectile projectile = projectileObject.GetComponent<StartProjectile>();
         projectile.Launch(moveDirection, 300);
         animator.SetTrigger("Launch");
+    }
+
+    void FindFriend()
+    {
+        RaycastHit2D hit = Physics2D.Raycast(
+            rigidbody2d.position + Vector2.up * 0.2f,
+            moveDirection,
+            1.5f,
+            LayerMask.GetMask("NPC"));
+
+        if (hit.collider != null)
+        {
+            NPC character = hit.collider.GetComponent<NPC>();
+            if (character != null)
+            {
+                StartUIHandler.instance.DisplayDialogue();
+            }
+        }
     }
 }
