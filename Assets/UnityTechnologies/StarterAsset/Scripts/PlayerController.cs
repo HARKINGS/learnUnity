@@ -5,6 +5,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
+    AudioSource audioSource;
     public InputAction talkAction;
     // Variables related to player character movement
     public InputAction MoveAction;
@@ -35,6 +36,7 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         animator = GetComponent<Animator>();
         MoveAction.Enable();
         talkAction.Enable();
@@ -76,6 +78,10 @@ public class PlayerController : MonoBehaviour
         rigidbody2d.MovePosition(position);
     }
 
+    public void PlaySound(AudioClip audioClip)
+    {
+        audioSource.PlayOneShot(audioClip);
+    }
     public void ChangeHealth(int amount)
     {
         if (amount < 0)
@@ -110,6 +116,7 @@ public class PlayerController : MonoBehaviour
             NPC character = hit.collider.GetComponent<NPC>();
             if (character != null)
             {
+                Debug.Log("Communication start!");
                 StartUIHandler.instance.DisplayDialogue();
             }
         }

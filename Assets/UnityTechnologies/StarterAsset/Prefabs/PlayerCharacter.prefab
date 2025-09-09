@@ -106,8 +106,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cdbfaf92b63c7b41a1749b69e60db16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectilePrefab: {fileID: 8487871712308984995, guid: ccb82c7bf30886e4a93fbea2421555c9,
-    type: 3}
+  talkAction:
+    m_Name: Talk
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: d9060520-a5c2-4c4a-8a7a-5f47e4018e1b
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
   MoveAction:
     m_Name: Move
     m_Type: 0
@@ -160,6 +167,8 @@ MonoBehaviour:
   speed: 3
   maxHealth: 5
   timeInvincible: 2
+  projectilePrefab: {fileID: 8487871712308984995, guid: ccb82c7bf30886e4a93fbea2421555c9,
+    type: 3}
 --- !u!50 &5153124523258752063
 Rigidbody2D:
   serializedVersion: 5

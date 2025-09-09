@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
+    AudioSource audioSource;
     bool broken = true;
     Animator animator;
     public float changeTime = 3.0f;
@@ -19,6 +21,7 @@ public class EnemyController : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         animator = GetComponent<Animator>();
         timer = changeTime;
         rigidbody2d = GetComponent<Rigidbody2D>();
@@ -72,5 +75,6 @@ public class EnemyController : MonoBehaviour
         animator.SetTrigger("Fixed");
         broken = false;
         rigidbody2d.simulated = false;
+        audioSource.Stop();
     }
 }
