@@ -6,6 +6,9 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
     AudioSource audioSource;
+    public AudioClip playerHitClip;
+    public AudioClip footstepClip;
+
     public InputAction talkAction;
     // Variables related to player character movement
     public InputAction MoveAction;
@@ -37,9 +40,12 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
+        // playerHitClip = GetComponent<AudioClip>();
+
         animator = GetComponent<Animator>();
         MoveAction.Enable();
         talkAction.Enable();
+
         rigidbody2d = GetComponent<Rigidbody2D>();
         currentHealth = maxHealth;
     }
@@ -53,6 +59,7 @@ public class PlayerController : MonoBehaviour
         {
             moveDirection.Set(move.x, move.y);
             moveDirection.Normalize();
+            PlaySound(footstepClip);
         }
 
         animator.SetFloat("Look X", moveDirection.x);
@@ -87,7 +94,10 @@ public class PlayerController : MonoBehaviour
         if (amount < 0)
         {
             if (isInvincible) return;
+
             animator.SetTrigger("Hit");
+            PlaySound(playerHitClip);
+
             isInvincible = true;
             damageCooldown = timeInvincible;
         }

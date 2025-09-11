@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
+    public ParticleSystem smokeEffect;
     AudioSource audioSource;
     bool broken = true;
     Animator animator;
@@ -76,5 +77,6 @@ public class EnemyController : MonoBehaviour
         broken = false;
         rigidbody2d.simulated = false;
         audioSource.Stop();
+        smokeEffect.Stop();
     }
 }
